@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | Time and Memory]]></title>
   <link href="http://sagemintblue.github.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://sagemintblue.github.com/"/>
-  <updated>2013-01-21T21:14:27-08:00</updated>
+  <updated>2013-01-21T22:56:20-08:00</updated>
   <id>http://sagemintblue.github.com/</id>
   <author>
     <name><![CDATA[Andy Schlaikjer]]></name>
@@ -96,7 +96,7 @@ this issue before (<a href="http://askubuntu.com/questions/173721/how-do-i-updat
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;sudo dkms remove nvidia&lt;/p&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;Completely remove the nvidia driver package <span class="o">(</span>in my <span class="k">case</span> &lt;code&gt;nvidia-common&lt;/code&gt;<span class="o">)</span>&lt;/h1&gt;
+</span><span class='line'>&lt;h1&gt;Completely remove the nvidia driver package <span class="o">(</span>in my <span class="k">case</span> &lt;code&gt;nvidia-current&lt;/code&gt;<span class="o">)</span>&lt;/h1&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;sudo apt-get remove --purge nvidia-current&lt;/p&gt;
 </span><span class='line'>
