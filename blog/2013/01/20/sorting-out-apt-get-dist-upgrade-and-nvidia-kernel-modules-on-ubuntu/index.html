@@ -102,23 +102,71 @@ existing kernel modules to work with it. The nvidia driver / kernel module faile
 causing the display manager and X to enter some awful video mode. Looks like others have run into
 this issue before (<a href="http://askubuntu.com/questions/173721/how-do-i-update-my-nvidia-modules-after-updating-my-kernel">6</a>, <a href="http://askubuntu.com/questions/37590/nvidia-drivers-not-working-after-upgrade-why-can-i-only-see-terminal">7</a>). To get things back in order, I followed roughly these steps:</p>
 
-<ol>
-<li><p>Get to a shell on the machine (e.g. via ssh from another computer).</p></li>
-<li><p>Ensure <a href="https://help.ubuntu.com/community/BinaryDriverHowto/Nvidia#Installation_without_X_.2BAC8_from_the_console">jockey-text</a> is available so you can control proprietary drivers (e.g. <code>nvidia-current</code>)
-from the command line. If you don&#8217;t have it, try installing one of <a href="https://launchpad.net/jockey">jockey</a>&#8217;s graphical front end
-packages, for example: <code>sudo apt-get install jockey-gtk</code></p></li>
-<li><p>Turn off the display manager (and X): <code>sudo stop lightdm</code></p></li>
-<li><p>Turn off the nvidia module: <code>sudo dkms remove nvidia</code></p></li>
-<li><p>Completely remove the nvidia driver package (in my case <code>nvidia-common</code>): <code>sudo apt-get remove
---purge nvidia-current</code></p></li>
-<li><p>Make sure you have the latest headers with which to rebuild your driver kernel module: <code>sudo
-apt-get install linux-headers-generic</code></p></li>
-<li><p>Reinstall the driver package, causing a rebuild with current kernel: <code>sudo apt-get install
-nvidia-current</code></p></li>
-<li><p>Check to see if the driver was enabled during install: <code>sudo jockey-text -l</code></p></li>
-<li><p>If necessary, enable the driver via: <code>sudo jockey-text -e kmod:nvidia-current</code></p></li>
-<li><p>Reboot with <code>sudo shutdown -r now</code> and check <code>/var/logs/Xorg.0.log</code> and friends for errors.</p></li>
-</ol>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># Get to a shell on the machine</span>
+</span><span class='line'>ssh yourbrokenbox
+</span><span class='line'>
+</span><span class='line'><span class="c"># Ensure `jockey-text` is available so you can control proprietary drivers (e.g. `nvidia-current`)</span>
+</span><span class='line'><span class="c"># from the command line. If you don&#39;t have it, try installing one of jockey&#39;s graphical front end</span>
+</span><span class='line'><span class="c"># packages, for example:</span>
+</span><span class='line'>sudo apt-get install jockey-gtk
+</span><span class='line'>
+</span><span class='line'><span class="c"># Turn off the display manager (and X)</span>
+</span><span class='line'>sudo stop lightdm
+</span><span class='line'>
+</span><span class='line'><span class="c"># Turn off the nvidia module</span>
+</span><span class='line'>sudo dkms remove nvidia
+</span><span class='line'>
+</span><span class='line'><span class="c"># Completely remove the nvidia driver package (in my case `nvidia-common`)</span>
+</span><span class='line'>sudo apt-get remove --purge nvidia-current
+</span><span class='line'>
+</span><span class='line'><span class="c"># Make sure you have the latest headers with which to rebuild the driver</span>
+</span><span class='line'>sudo apt-get install linux-headers-generic
+</span><span class='line'>
+</span><span class='line'><span class="c"># Reinstall and rebuild the driver with current kernel</span>
+</span><span class='line'>sudo apt-get install nvidia-current
+</span><span class='line'>
+</span><span class='line'><span class="c"># Check to see if the driver was enabled during install</span>
+</span><span class='line'>sudo jockey-text -l
+</span><span class='line'>
+</span><span class='line'><span class="c"># If necessary, enable the driver</span>
+</span><span class='line'>sudo jockey-text -e kmod:nvidia-current
+</span><span class='line'>
+</span><span class='line'><span class="c"># Reboot and check `/var/logs/Xorg.0.log` and friends for errors</span>
+</span><span class='line'>sudo shutdown -r now
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
