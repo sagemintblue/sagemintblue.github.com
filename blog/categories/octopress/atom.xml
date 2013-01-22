@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Time and Memory]]></title>
+  <link href="http://sagemintblue.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://sagemintblue.github.com/"/>
+  <updated>2013-01-21T19:07:44-08:00</updated>
+  <id>http://sagemintblue.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Schlaikjer]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[From WordPress to Octopress]]></title>
+    <link href="http://sagemintblue.github.com/blog/2013/01/21/from-wordpress-to-octopress/"/>
+    <updated>2013-01-21T18:56:00-08:00</updated>
+    <id>http://sagemintblue.github.com/blog/2013/01/21/from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<p>I've transitioned away from <a href="http://wordpress.com/">WordPress.com</a> to <a href="http://octopress.org/">Octopress</a> + <a href="http://github.com/">Github</a> and am loving it so
+far. I may need to figure out how to extend Octopress to support latex math mode and image
+generation, but for now this is a vastly improved blogging experience for me. Thanks Octopress,
+Github!</p>
+]]></content>
+  </entry>
+  
+</feed>

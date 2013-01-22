@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Time and Memory</title>
+  <title>Fighting with the WP.com post editor - Time and Memory</title>
   <meta name="author" content="Andy Schlaikjer">
 
   
-  <meta name="description" content="I&#8217;ve transitioned away from WordPress.com to Octopress + Github and am loving it so
-far. I may need to figure out how to extend Octopress to &hellip;">
+  <meta name="description" content="As soon as I start a code-oriented blog I find out that the WordPress post editor doesn&#8217;t have a
+keyboard shortcut for applying &lt;code/&gt; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ far. I may need to figure out how to extend Octopress to &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sagemintblue.github.com/">
+  <link rel="canonical" href="http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,54 +63,12 @@ far. I may need to figure out how to extend Octopress to &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/21/from-wordpress-to-octopress/">From WordPress to Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-21T18:56:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;ve transitioned away from <a href="http://wordpress.com/">WordPress.com</a> to <a href="http://octopress.org/">Octopress</a> + <a href="http://github.com/">Github</a> and am loving it so
-far. I may need to figure out how to extend Octopress to support latex math mode and image
-generation, but for now this is a vastly improved blogging experience for me. Thanks Octopress,
-Github!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/20/fighting-with-the-wp-com-post-editor/">Fighting With the WP.com Post Editor</a></h1>
+      <h1 class="entry-title">Fighting With the WP.com Post Editor</h1>
     
     
       <p class="meta">
@@ -133,7 +91,7 @@ Github!</p>
   </header>
 
 
-  <div class="entry-content"><p>As soon as I start a code-oriented blog I find out that the WordPress post editor doesn&#8217;t have a
+<div class="entry-content"><p>As soon as I start a code-oriented blog I find out that the WordPress post editor doesn&#8217;t have a
 keyboard shortcut for applying <code>&lt;code/&gt;</code> to selected text.. Bah!</p>
 
 <p>I&#8217;m looking for a few ways around this:</p>
@@ -165,86 +123,16 @@ including <a href="https://github.com/chjj/marked/">marked</a> and <a href="http
 there. What&#8217;s not to love about a blogging framework you have complete control over and can host
 directly on Github?</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/20/sorting-out-apt-get-dist-upgrade-and-nvidia-kernel-modules-on-ubuntu/">Sorting Out Apt-get Dist-upgrade and Nvidia Kernel Modules on Ubuntu</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Andy Schlaikjer</span></span>
 
-<time datetime="2013-01-20T16:02:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I ran into some trouble with my Ubuntu 12.10 machine yesterday when running a few updates; I noticed
-that after a normal apt-get update/upgrade a few packages had been &#8220;kept back.&#8221; Turns out <code>apt-get
-upgrade</code> will refuse to remove or install new packages by default. If you want everything fully
-updated, along with new transitive dependencies of existing packages, you need <code>apt-get
-dist-upgrade</code> instead (<a href="http://askubuntu.com/questions/194651/why-use-apt-get-upgrade-instead-of-apt-get-dist-upgrade">1</a>, <a href="http://askubuntu.com/questions/215267/apt-get-dist-upgrade">2</a>, <a href="http://askubuntu.com/questions/216371/apt-get-dist-upgrade-doesnt-fix-the-following-packages-have-been-kept-back">3</a>, <a href="http://superuser.com/questions/386583/will-apt-get-dist-upgrade-update-my-ubuntu-to-the-next-major-release">4</a>, <a href="http://ubuntulinuxtipstricks.blogspot.com/2010/02/dist-upgrade-misnomer-confusion.html">5</a>).</p>
-
-<p>Unfortunately, when I ran <code>apt-get dist-upgrade</code> it upgraded my system&#8217;s kernel but didn&#8217;t recompile
-existing kernel modules to work with it. The nvidia driver / kernel module failed to load on reboot,
-causing the display manager and X to enter some awful video mode. Looks like others have run into
-this issue before (<a href="http://askubuntu.com/questions/173721/how-do-i-update-my-nvidia-modules-after-updating-my-kernel">6</a>, <a href="http://askubuntu.com/questions/37590/nvidia-drivers-not-working-after-upgrade-why-can-i-only-see-terminal">7</a>). To get things back in order, I followed roughly these steps:</p>
-
-<ol>
-<li><p>Get to a shell on the machine (e.g. via ssh from another computer).</p></li>
-<li><p>Ensure <a href="https://help.ubuntu.com/community/BinaryDriverHowto/Nvidia#Installation_without_X_.2BAC8_from_the_console">jockey-text</a> is available so you can control proprietary drivers (e.g. <code>nvidia-current</code>)
-from the command line. If you don&#8217;t have it, try installing one of <a href="https://launchpad.net/jockey">jockey</a>&#8217;s graphical front end
-packages, for example: <code>sudo apt-get install jockey-gtk</code></p></li>
-<li><p>Turn off the display manager (and X): <code>sudo stop lightdm</code></p></li>
-<li><p>Turn off the nvidia module: <code>sudo dkms remove nvidia</code></p></li>
-<li><p>Completely remove the nvidia driver package (in my case <code>nvidia-common</code>): <code>sudo apt-get remove
---purge nvidia-current</code></p></li>
-<li><p>Make sure you have the latest headers with which to rebuild your driver kernel module: <code>sudo
-apt-get install linux-headers-generic</code></p></li>
-<li><p>Reinstall the driver package, causing a rebuild with current kernel: <code>sudo apt-get install
-nvidia-current</code></p></li>
-<li><p>Check to see if the driver was enabled during install: <code>sudo jockey-text -l</code></p></li>
-<li><p>If necessary, enable the driver via: <code>sudo jockey-text -e kmod:nvidia-current</code></p></li>
-<li><p>Reboot with <code>sudo shutdown -r now</code> and check <code>/var/logs/Xorg.0.log</code> and friends for errors.</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/20/writing-about-code-and-math-with-wordpress-com/">Writing About Code and Math With WordPress.com</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -256,36 +144,46 @@ nvidia-current</code></p></li>
   
 
 
-<time datetime="2013-01-20T04:08:12-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-01-20T16:15:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Looks like WP has a number of code and math highlighting options which may come in useful here&#8230;</p>
-
-<ul>
-<li><a href="http://en.support.wordpress.com/code/posting-source-code/">Source code highlighting</a> via Alex Gorbatchev&#8217;s <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a></li>
-<li><a href="http://en.support.wordpress.com/gist/">Gist support</a></li>
-<li><a href="http://en.support.wordpress.com/latex/">LaTeX rendering</a></li>
-</ul>
-
-
-<p>Any other good ones I&#8217;m missing?</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/" data-via="sagemintblue" data-counturl="http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/20/sorting-out-apt-get-dist-upgrade-and-nvidia-kernel-modules-on-ubuntu/" title="Previous Post: Sorting out apt-get dist-upgrade and nvidia kernel modules on Ubuntu">&laquo; Sorting out apt-get dist-upgrade and nvidia kernel modules on Ubuntu</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/21/from-wordpress-to-octopress/" title="Next Post: From WordPress to Octopress">From WordPress to Octopress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -315,7 +213,7 @@ nvidia-current</code></p></li>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -335,6 +233,7 @@ nvidia-current</code></p></li>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -349,7 +248,10 @@ nvidia-current</code></p></li>
       var disqus_shortname = 'sagemintblue';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/';
+        var disqus_url = 'http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

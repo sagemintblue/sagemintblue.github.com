@@ -1,16 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Time and Memory]]></title>
   <link href="http://sagemintblue.github.com/atom.xml" rel="self"/>
   <link href="http://sagemintblue.github.com/"/>
-  <updated>2013-01-21T16:31:57-08:00</updated>
+  <updated>2013-01-21T19:07:44-08:00</updated>
   <id>http://sagemintblue.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Andy Schlaikjer]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[From WordPress to Octopress]]></title>
+    <link href="http://sagemintblue.github.com/blog/2013/01/21/from-wordpress-to-octopress/"/>
+    <updated>2013-01-21T18:56:00-08:00</updated>
+    <id>http://sagemintblue.github.com/blog/2013/01/21/from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve transitioned away from <a href="http://wordpress.com/">WordPress.com</a> to <a href="http://octopress.org/">Octopress</a> + <a href="http://github.com/">Github</a> and am loving it so
+far. I may need to figure out how to extend Octopress to support latex math mode and image
+generation, but for now this is a vastly improved blogging experience for me. Thanks Octopress,
+Github!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fighting with the WP.com post editor]]></title>
+    <link href="http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor/"/>
+    <updated>2013-01-20T16:15:00-08:00</updated>
+    <id>http://sagemintblue.github.com/blog/2013/01/20/fighting-with-the-wp-com-post-editor</id>
+    <content type="html"><![CDATA[<p>As soon as I start a code-oriented blog I find out that the WordPress post editor doesn&#8217;t have a
+keyboard shortcut for applying <code>&lt;code/&gt;</code> to selected text.. Bah!</p>
+
+<p>I&#8217;m looking for a few ways around this:</p>
+
+<ul>
+<li>An external editor (web-based or otherwise) which supports auto-conversion of <a href="http://daringfireball.net/projects/markdown/">markdown</a> into html
+and uploads to WP.com.</li>
+<li>Chrome extension or <a href="http://userscripts.org/">userscript</a> to hack in an additional <code>ctrl-shift-c</code> keyboard shortcut for the
+<a href="http://www.tinymce.com/">TinyMCE WYSIWYG editor</a> used by WP.</li>
+</ul>
+
+
+<p>Relevant links:</p>
+
+<ul>
+<li><a href="http://www.beginwp.com/list-of-keyboard-shortcut-wordpress/">http://www.beginwp.com/list-of-keyboard-shortcut-wordpress/</a> - Seems to suggest a keyboard shortcut
+for insertion of <code>&lt;code/&gt;</code> does exist, but I couldn&#8217;t get it to work in Mac Chrome 24.0.1312.52.</li>
+<li><a href="http://davejamesmiller.com/snippets/wordpress-keyboard-shortcuts-to-indentoutdent-and-format-as-code-in-tinymce">http://davejamesmiller.com/snippets/wordpress-keyboard-shortcuts-to-indentoutdent-and-format-as-code-in-tinymce</a></li>
+<li><a href="http://wordpress.org/extend/plugins/wysiwyg-inline-code-command/">http://wordpress.org/extend/plugins/wysiwyg-inline-code-command/</a></li>
+<li><a href="http://wordpress.stackexchange.com/questions/33444/how-to-add-tinymce-keyboard-shortcut">http://wordpress.stackexchange.com/questions/33444/how-to-add-tinymce-keyboard-shortcut</a></li>
+<li><a href="http://wordpress.org/extend/plugins/wp-markdown/">http://wordpress.org/extend/plugins/wp-markdown/</a></li>
+</ul>
+
+
+<p>Update 2013-01-21</p>
+
+<p>I found a number of useful projects on which I could build the chrome extension I&#8217;d mentioned above,
+including <a href="https://github.com/chjj/marked/">marked</a> and <a href="http://epiceditor.com/">EpicEditor</a>, but then I landed on <a href="http://octopress.org/">Octopress</a> and may have to migrate
+there. What&#8217;s not to love about a blogging framework you have complete control over and can host
+directly on Github?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sorting out apt-get dist-upgrade and nvidia kernel modules on Ubuntu]]></title>
+    <link href="http://sagemintblue.github.com/blog/2013/01/20/sorting-out-apt-get-dist-upgrade-and-nvidia-kernel-modules-on-ubuntu/"/>
+    <updated>2013-01-20T16:02:00-08:00</updated>
+    <id>http://sagemintblue.github.com/blog/2013/01/20/sorting-out-apt-get-dist-upgrade-and-nvidia-kernel-modules-on-ubuntu</id>
+    <content type="html"><![CDATA[<p>I ran into some trouble with my Ubuntu 12.10 machine yesterday when running a few updates; I noticed
+that after a normal apt-get update/upgrade a few packages had been &#8220;kept back.&#8221; Turns out <code>apt-get
+upgrade</code> will refuse to remove or install new packages by default. If you want everything fully
+updated, along with new transitive dependencies of existing packages, you need <code>apt-get
+dist-upgrade</code> instead (<a href="http://askubuntu.com/questions/194651/why-use-apt-get-upgrade-instead-of-apt-get-dist-upgrade">1</a>, <a href="http://askubuntu.com/questions/215267/apt-get-dist-upgrade">2</a>, <a href="http://askubuntu.com/questions/216371/apt-get-dist-upgrade-doesnt-fix-the-following-packages-have-been-kept-back">3</a>, <a href="http://superuser.com/questions/386583/will-apt-get-dist-upgrade-update-my-ubuntu-to-the-next-major-release">4</a>, <a href="http://ubuntulinuxtipstricks.blogspot.com/2010/02/dist-upgrade-misnomer-confusion.html">5</a>).</p>
+
+<p>Unfortunately, when I ran <code>apt-get dist-upgrade</code> it upgraded my system&#8217;s kernel but didn&#8217;t recompile
+existing kernel modules to work with it. The nvidia driver / kernel module failed to load on reboot,
+causing the display manager and X to enter some awful video mode. Looks like others have run into
+this issue before (<a href="http://askubuntu.com/questions/173721/how-do-i-update-my-nvidia-modules-after-updating-my-kernel">6</a>, <a href="http://askubuntu.com/questions/37590/nvidia-drivers-not-working-after-upgrade-why-can-i-only-see-terminal">7</a>). To get things back in order, I followed roughly these steps:</p>
+
+<ol>
+<li><p>Get to a shell on the machine (e.g. via ssh from another computer).</p></li>
+<li><p>Ensure <a href="https://help.ubuntu.com/community/BinaryDriverHowto/Nvidia#Installation_without_X_.2BAC8_from_the_console">jockey-text</a> is available so you can control proprietary drivers (e.g. <code>nvidia-current</code>)
+from the command line. If you don&#8217;t have it, try installing one of <a href="https://launchpad.net/jockey">jockey</a>&#8217;s graphical front end
+packages, for example: <code>sudo apt-get install jockey-gtk</code></p></li>
+<li><p>Turn off the display manager (and X): <code>sudo stop lightdm</code></p></li>
+<li><p>Turn off the nvidia module: <code>sudo dkms remove nvidia</code></p></li>
+<li><p>Completely remove the nvidia driver package (in my case <code>nvidia-common</code>): <code>sudo apt-get remove
+--purge nvidia-current</code></p></li>
+<li><p>Make sure you have the latest headers with which to rebuild your driver kernel module: <code>sudo
+apt-get install linux-headers-generic</code></p></li>
+<li><p>Reinstall the driver package, causing a rebuild with current kernel: <code>sudo apt-get install
+nvidia-current</code></p></li>
+<li><p>Check to see if the driver was enabled during install: <code>sudo jockey-text -l</code></p></li>
+<li><p>If necessary, enable the driver via: <code>sudo jockey-text -e kmod:nvidia-current</code></p></li>
+<li><p>Reboot with <code>sudo shutdown -r now</code> and check <code>/var/logs/Xorg.0.log</code> and friends for errors.</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Writing about code and math with WordPress.com]]></title>
+    <link href="http://sagemintblue.github.com/blog/2013/01/20/writing-about-code-and-math-with-wordpress-com/"/>
+    <updated>2013-01-20T04:08:12-08:00</updated>
+    <id>http://sagemintblue.github.com/blog/2013/01/20/writing-about-code-and-math-with-wordpress-com</id>
+    <content type="html"><![CDATA[<p>Looks like WP has a number of code and math highlighting options which may come in useful here&#8230;</p>
+
+<ul>
+<li><a href="http://en.support.wordpress.com/code/posting-source-code/">Source code highlighting</a> via Alex Gorbatchev&#8217;s <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a></li>
+<li><a href="http://en.support.wordpress.com/gist/">Gist support</a></li>
+<li><a href="http://en.support.wordpress.com/latex/">LaTeX rendering</a></li>
+</ul>
+
+
+<p>Any other good ones I&#8217;m missing?</p>
+]]></content>
+  </entry>
   
 </feed>
